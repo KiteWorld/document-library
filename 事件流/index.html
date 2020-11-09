@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="list-container">
+		<ul class="list">
+			<li class="list-item">1</li>
+		</ul>
+	</div>
+	<script>
+		let listItem = document.getElementsByClassName("list-item")[0]
+		let list = document.getElementsByClassName("list")[0]
+		let listContainer = document.getElementsByClassName("list-container")[0]
+
+		let doSome = (text) => {
+			console.log(text)
+		}
+		//冒泡
+		// listItem.addEventListener("click", () => {
+		// 	doSome('li————最先执行')
+		// })
+		// list.addEventListener("click", () => {
+		// 	doSome('ul————接着执行')
+		// })
+		// listContainer.addEventListener("click", () => {
+		// 	doSome('div————最+后执行')
+		// })
+
+
+		//捕获
+		listItem.addEventListener("click", () => {
+			doSome('li————最先执行')
+		}, true)
+		list.addEventListener("click", () => {
+			doSome('ul————接着执行')
+		}, true)
+		listContainer.addEventListener("click", () => {
+			doSome('div————最后执行')
+		}, true)
+	</script>
+</body>
+
+</html>
