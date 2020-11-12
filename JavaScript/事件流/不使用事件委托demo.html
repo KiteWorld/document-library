@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.list-container {
+			width: 250px;
+			/* height: 250px; */
+			background-color: green;
+		}
+
+		.list {
+			padding: 0;
+			width: 100px;
+			/* height: 100px; */
+			background: black;
+			list-style: none;
+		}
+
+		.list-item {
+			width: 50%;
+			color: #fff;
+			line-height: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="list-container">
+		<ul class="list">
+		</ul>
+	</div>
+	<button class="btn">添加列表项</button>
+	<script>
+		let listContainer = document.getElementsByClassName("list-container")[0] //div
+		let list = document.getElementsByClassName("list")[0] //ul
+		let listItem = document.querySelector(".list-item")
+		let btn = document.querySelector(".btn") //button
+		let doSome = (text) => {
+			console.log(text)
+		}
+		let dataList = ["1", "2", "3", "4", "5"]
+
+		let addDOM = (text) => {
+			let newDOM = document.createElement("li")
+			newDOM.classList.add("list-item")
+			newDOM.addEventListener("click", () => {
+				doSome(text)
+			})
+			newDOM.innerHTML = text
+			list.appendChild(newDOM)
+		}
+
+		dataList.forEach((x, i) => {
+			addDOM(x)
+		})
+
+		btn.addEventListener("click", () => {
+			dataList.push(dataList.length + 1)
+			addDOM(dataList[dataList.length - 1])
+		})
+	</script>
+</body>
+
+</html>

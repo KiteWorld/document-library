@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.list-container {
+			width: 250px;
+			/* height: 250px; */
+			background-color: green;
+		}
+
+		.list {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 120px;
+			padding: 0;
+			/* height: 100px; */
+			background: black;
+			list-style: none;
+		}
+
+		.list-item {
+			width: 50%;
+			background-color: gold;
+			color: #fff;
+			height: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="list-container">
+		<ul class="list">
+		</ul>
+	</div>
+	<button class="btn">添加列表项</button>
+	<script>
+		let list = document.getElementsByClassName("list")[0] //ul
+		let listItem = document.querySelector(".list-item")
+		let btn = document.querySelector(".btn") //button
+		let dataList = ["1", "2", "3", "4", "5"]
+
+		let addDOM = (text) => {
+			let newDOM = document.createElement("li")
+			newDOM.classList.add("list-item")
+			newDOM.setAttribute("data-text", text) //添加自定义属性，可以存接口的需要的属性值，例如:查看该项数据详细的ID
+			newDOM.innerHTML = text
+			list.appendChild(newDOM)
+		}
+
+		dataList.forEach((x, i) => {
+			addDOM(x)
+		})
+
+		list.addEventListener("click", (e) => {
+			console.log(e.target.dataset.text) //获取自定义属性 data-text value
+		})
+
+		btn.addEventListener("click", () => {
+			dataList.push(dataList.length + 1)
+			addDOM(dataList[dataList.length - 1])
+		})
+	</script>
+</body>
+
+</html>

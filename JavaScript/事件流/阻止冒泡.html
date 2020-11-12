@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.list-container {
+			width: 250px;
+			height: 250px;
+			background-color: green;
+		}
+
+		.list {
+			padding: 0;
+			width: 100px;
+			height: 100px;
+			background: black;
+			list-style: none;
+		}
+
+		.list-item {
+			background-color: rgb(255, 117, 117);
+			color: #fff;
+			line-height: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="list-container">
+		<ul class="list">
+			<li class="list-item">1</li>
+		</ul>
+	</div>
+	<script>
+		let listContainer = document.getElementsByClassName("list-container")[0] //div
+		let list = document.getElementsByClassName("list")[0] //ul
+		let listItem = document.querySelector(".list-item") //l
+
+		let doSome = (text) => {
+			console.log(text)
+		}
+		listItem.addEventListener("click", (e) => {
+			console.log("这个打印信息只是说明使用「e」和「event」是等价的，可以相互使用", e === event) //true 自定义的参数「e」和「event」对象引用是相同的。
+			e.stopPropagation() //阻止事件传递
+			doSome('li————最先执行')
+		})
+		list.addEventListener("click", (e) => {
+			console.log("——————ul没有阻止冒泡——————")
+			doSome('ul————接着执行')
+		})
+		listContainer.addEventListener("click", () => {
+			doSome('div————最后执行')
+		})
+	</script>
+</body>
+
+</html>

@@ -5,6 +5,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<style>
+		.list-container {
+			width: 250px;
+			/* height: 250px; */
+			background-color: green;
+		}
+
+		.list {
+			padding: 0;
+			width: 100px;
+			/* height: 100px; */
+			background: black;
+			list-style: none;
+		}
+
+		.list-item {
+			width: 50%;
+			color: #fff;
+			line-height: 20px;
+		}
+	</style>
 </head>
 
 <body>
@@ -14,13 +35,14 @@
 		</ul>
 	</div>
 	<script>
-		let listItem = document.getElementsByClassName("list-item")[0]
-		let list = document.getElementsByClassName("list")[0]
-		let listContainer = document.getElementsByClassName("list-container")[0]
+		let listContainer = document.getElementsByClassName("list-container")[0] //div
+		let list = document.getElementsByClassName("list")[0] //ul
+		let listItem = document.querySelector(".list-item")
 
 		let doSome = (text) => {
 			console.log(text)
 		}
+
 		//冒泡
 		// listItem.addEventListener("click", () => {
 		// 	doSome('li————最先执行')
@@ -29,19 +51,19 @@
 		// 	doSome('ul————接着执行')
 		// })
 		// listContainer.addEventListener("click", () => {
-		// 	doSome('div————最+后执行')
+		// 	doSome('div————最后执行')
 		// })
 
 
-		//捕获
+		// //捕获
 		listItem.addEventListener("click", () => {
-			doSome('li————最先执行')
+			doSome('li————最后执行')
 		}, true)
 		list.addEventListener("click", () => {
 			doSome('ul————接着执行')
 		}, true)
 		listContainer.addEventListener("click", () => {
-			doSome('div————最后执行')
+			doSome('div————最先执行')
 		}, true)
 	</script>
 </body>
