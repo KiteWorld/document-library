@@ -1,6 +1,6 @@
 这几天看了 jsliang 大佬的面试的复习指南。觉得自己掌握的知识非常有限，让我危机感十足，怕自己离开现在的公司就失去竞争力。入职半年的小前端切图仔，写得不好得地方大家多多包涵指教。
 
-食用前，请对照「github」上的例子，食用更佳。 ![「文字例子」](https://github.com/KiteWorld/document-library/tree/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81)
+食用前，请对照「github」上的例子，食用更佳。 [「文字例子」](https://github.com/KiteWorld/document-library/tree/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81)
 
 事件委托，也叫事件代理。顾名思义就是拜托别人就办事。反映在 JS 上就是，原本某个 DOM 绑定的事件委托给别的 DOM 来执行。在学习「事件委托」之前，我们先说一下「事件流」和「事件模型」
 ## 事件流
