@@ -154,7 +154,6 @@
 ```
 
 
-
 ## 捕获
 
 非常惭愧，自己在开发的过程中没有利用过「捕获」来实现功能。在网上搜了一下，也没有找到能说出个所以然的文章。如果你知道有哪些经典的例子，请在评论区里留言，供大家学习学习，先说声谢谢。
@@ -168,6 +167,6 @@
  - [事件流](https://github.com/LiangJunrong/document-library/blob/master/%E7%B3%BB%E5%88%97-%E9%9D%A2%E8%AF%95%E8%B5%84%E6%96%99/JavaScript/%E5%9F%BA%E7%A1%80.md#%E4%BA%94-%E4%BA%8B%E4%BB%B6%E6%B5%81)
 
 
-[1]: https://kite1874.com/usr/uploads/2020/11/2983987108.png
-[2]: https://kite1874.com/usr/uploads/2020/11/1609121545.png
-[3]: https://kite1874.com/usr/uploads/2020/11/3704935117.png
+[1]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/%E5%86%92%E6%B3%A1%E5%9E%8B.png
+[2]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/%E5%86%92%E6%B3%A1%E5%9E%8B.png
+[3]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/DOM2%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B.png
