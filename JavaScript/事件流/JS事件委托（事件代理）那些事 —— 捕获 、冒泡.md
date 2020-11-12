@@ -7,11 +7,11 @@
 事件流，按我的理解就是，事件的传递。根据传递的方向不同一般分成捕获型和冒泡型
 ### 捕获型事件流
 由子元素向父元素传递
-![冒泡型.png][1]
+![捕获型.png][2]
 
 ### 冒泡型事件流
 由父元素到子元素传递
-![捕获型.png][2]
+![冒泡型.png][1]
 
 具体什么时候执行函数是通过addEventListener()第三个参数决定的，不填默认为false，也就是冒泡时执行，为true，捕获时执行。
 
@@ -168,5 +168,5 @@
 
 
 [1]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/%E5%86%92%E6%B3%A1%E5%9E%8B.png
-[2]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/%E5%86%92%E6%B3%A1%E5%9E%8B.png
+[2]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/%E6%8D%95%E8%8E%B7%E5%9E%8B.png
 [3]: https://github.com/KiteWorld/document-library/blob/master/JavaScript/%E4%BA%8B%E4%BB%B6%E6%B5%81/images/DOM2%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B.png
