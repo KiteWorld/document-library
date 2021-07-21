@@ -5,10 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>水平居中</title>
+	<title>水平垂直居中</title>
 	<style>
-		.inline-box,
-		.block-box,
 		.table-cell-box,
 		.position-margin-box,
 		.position-box,
@@ -18,34 +16,15 @@
 			border: 1px solid black;
 		}
 
-		.inline-box {
-			text-align: center;
-		}
-
-		img {
-			width: 200px;
-			height: 200px;
-			/* 行内块级元素，计算设置了宽度，也无法通过 margin 实现水平居中 */
-			margin: 0 auto;
-		}
-
-		/* 设置宽度 */
-		.block-content-1 {
-			width: 100px;
-			height: 100px;
-			background-color: cadetblue;
-			margin: 0 auto;
-		}
-
-		/* 没设置宽度 ，默认占满一行，没有水平居中意义*/
-		.block-content-2 {
-			background: #fba6a6;
-		}
-
-		/* table-cell */
 		.table-cell-box {
 			display: table-cell;
+			vertical-align: middle;
 			text-align: center;
+		}
+
+		.block-content {
+			width: 100px;
+			background-color: cadetblue;
 		}
 
 		.position-margin-box {
@@ -55,9 +34,12 @@
 		.position-margin-box * {
 			position: absolute;
 			width: 200px;
+			height: 200px;
 			background-color: cadetblue;
 			left: 0;
 			right: 0;
+			top: 0;
+			bottom: 0;
 			margin: auto;
 			opacity: 0.5;
 		}
@@ -67,28 +49,24 @@
 			position: relative;
 		}
 
-		.position-span {
+		.position-box * {
 			position: absolute;
-			top: 0;
+			top: 50%;
 			left: 50%;
-			transform: translateX(-50%);
+			transform: translate(-50%, -50%);
 		}
 
 		.position-div {
-			position: absolute;
-			/* 不设置宽高定位的方式也可以实现水平居中 */
 			width: 100px;
 			height: 100px;
 			background-color: cadetblue;
-			top: 50px;
-			left: 50%;
-			transform: translateX(-50%);
 		}
 
 		/* flex 布局显示水平居中 (是否设置宽高以及元素类型，不会影响居中效果) */
 		.flex-box {
 			display: flex;
 			justify-content: center;
+			align-items: center;
 		}
 
 		.flex-div {
@@ -100,37 +78,18 @@
 </head>
 
 <body>
-	<!-- 行内元素水平居中） -->
-	<div class="inline-box">
-		<!-- 行内元素 -->
-		<span>行内元素水平居中</span>
-		<!-- 行内块级元素 -->
-		<img src="logo.jpg">
-	</div>
-
-	<!-- 块级元素水平居中 -->
-	<div class="block-box">
-		<div class="block-content-1">设置宽度，水平居中</div>
-		<div class="block-content-2">没设宽度默认占满一行，没必要水平居中</div>
-	</div>
-
-	<!-- table-cell -->
 	<div class="table-cell-box">
-		<span>table-cell 设置宽度，水平居中</span>
+		<span class="inline-content">行内元素</span>
+		<div class="block-content">块级元素无法水平居中</div>
 	</div>
-
 	<div class="position-margin-box">
 		<span class="inline-content">行内元素</span>
 		<div class="block-content">块级元素</div>
 	</div>
-
-	<!-- 定位方式实现水平居中 -->
 	<div class="position-box">
-		<span class="position-span">行内元素定位方式实现水平居中</span>
-		<div class="position-div">块级元素定位方式实现水平居中</div>
+		<span class="position-span">行内元素</span>
+		<div class="position-div">块级元素</div>
 	</div>
-	
-	<!-- flex 布局实现水平居中 -->
 	<div class="flex-box">
 		<!-- 行内元素 -->
 		<!-- <span class="flex-span">flex 布局实现水平居中</span> -->

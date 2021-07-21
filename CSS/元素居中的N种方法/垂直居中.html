@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>垂直居中</title>
+	<style>
+		.inline-box,
+		.inline-block-box,
+		.block-box,
+		.position-margin-box,
+		.position-box,
+		.flex-box {
+			height: 300px;
+			width: 300px;
+			border: 1px solid black;
+		}
+
+		/* 适用于行内元素和绝大部分行内块级元素（img 元素不生效） */
+		.inline-box {
+			line-height: 300px;
+		}
+
+		/* 适用于行内元素和行内块级元素 */
+		.inline-block-box {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		img {
+			width: 200px;
+			height: 200px;
+		}
+
+		/* 设置宽度，块级元素 */
+		.block-content-1 {
+			width: 100px;
+			height: 100px;
+			background-color: cadetblue;
+			margin-top: 100px;
+		}
+
+		/* 
+		 * 没设置宽度，块级元素 (不推荐使用)
+		 * 其实就是吧父元素变成了 table ，子元素变成 td ，实际上是子元素的内容垂直居中了。并不是子元素
+		 * 和 inline-block-box 的例子实现原理一样，还写多了个 div 标签 
+		 */
+
+		.position-margin-box {
+			position: relative;
+		}
+
+		.position-margin-box * {
+			position: absolute;
+			height: 100px;
+			background-color: cadetblue;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			opacity: 0.5;
+		}
+
+		/* position 定位垂直居中 (是否设置宽高以及元素类型，不会影响居中效果) */
+		.position-box {
+			position: relative;
+		}
+		.position-span {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		.position-div {
+			position: absolute;
+			/* 不设置宽高定位的方式也可以实现垂直居中 */
+			width: 100px;
+			height: 100px;
+			background-color: cadetblue;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+
+
+		/* flex 布局垂直居中 (是否设置宽高以及元素类型，不会影响居中效果) */
+		.flex-box {
+			display: flex;
+			align-items: center;
+		}
+
+		.flex-div {
+			width: 100px;
+			height: 100px;
+			background-color: cadetblue;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="inline-box">
+		<!-- 行内元素 -->
+		<span>行内元素垂直居中</span>
+		<!-- 行内块级元素（除 img 标签）-->
+		<!-- <input type="text">
+		<textarea>textarea</textarea>
+		<label>label</label>
+		<select>select</select> -->
+	</div>
+
+	<div class="inline-block-box">
+		<div>行内元素垂直居中</div>
+		<!-- img 也生效 -->
+		<img src="logo.jpg">
+		<!-- <span>行内元素</span> -->
+	</div>
+
+	<!-- 已设置高度，块级元素垂直居中 -->
+	<div class="block-box">
+		<div class="block-content-1">设置宽度，垂直居中</div>
+	</div>
+
+
+	<div class="position-margin-box">
+		<span class="inline-content">行内元素</span>
+		<div class="block-content">块级元素</div>
+	</div>
+
+	<!-- 定位方式实现垂直居中 -->
+	<div class="position-box">
+		<span class="position-span">行内元素定位方式实现垂直居中</span>
+		<div class="position-div">块级元素定位方式实现垂直居中</div>
+	</div>
+
+	<!-- flex 布局实现垂直居中 -->
+	<div class="flex-box">
+		<!-- 行内元素 -->
+		<!-- <span class="flex-span">flex 布局实现垂直居中</span> -->
+		<!-- 块级元素 -->
+		<div class="flex-div">flex 布局实现垂直居中 </div>
+	</div>
+</body>
+
+</html>
