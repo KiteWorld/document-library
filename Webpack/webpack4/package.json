@@ -1,0 +1,35 @@
+{
+  "name": "webpack4",
+  "version": "1.0.0",
+  "description": "webpack4搭建vue开发环境",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "keywords": [
+    "webpack4、vue2"
+  ],
+  "author": "kite1874",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.2.7",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.2",
+    "less": "^3.5.0",
+    "less-loader": "^7.3.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vuex": "^3.6.2"
+  }
+}
