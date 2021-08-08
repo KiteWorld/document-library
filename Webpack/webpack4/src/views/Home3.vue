@@ -2,16 +2,19 @@
   <div>
     <div>'vuex-state:'{{ text }}</div>
     <div>'vuex-getter:'{{ getText }}</div>
-    <p class="test">12312</p>
-    <button @click="setText(123)">12311231231231231231123121231233111111</button>
+    <p class="test">123１２３</p>
+    <button @click="setText(123)">
+      １２３１２３１1231223１１123123２３１1231231231231231223２３２３２３
+    </button>
   </div>
 </template>
 <script>
 import { mapGetters, mapState, mapActions } from "vuex"
-
 export default {
   data() {
-    return {}
+    return {
+
+    }
   },
   computed: {
     ...mapState(['text']),
@@ -22,10 +25,9 @@ export default {
     this.test()
     const a = 1
     debugger
+    throw 123
     //测试环境全局变量
     console.log('BASE_URL:', process.env.BASE_URL)
-    // process.env.NODE_ENV 
-    console.log('NODE_ENV:', process.env.NODE_ENV)
   },
   methods: {
     ...mapActions(['setText']),

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require("webpack");
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
 	mode: "development",
 	entry: "/src/main.js",

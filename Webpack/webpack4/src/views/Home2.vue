@@ -1,22 +1,26 @@
-<template>
-  <div>
-    <router-view />
-  </div>
+<template >
+  <div>123</div>
 </template>
-
 <script>
 export default {
   data() {
     return {
-      text: '测试vue'
+
     }
   },
-  methods: {}
+  computed: {
+
+  },
+  created() {
+  },
+  methods: {
+
+  }
 }
 </script>
 
 <style lang="less" scoped>
-.text {
-  color: red;
+.test {
+  color: rgb(199, 145, 78);
 }
 </style>
